@@ -9,24 +9,27 @@ class PlanetController < Sinatra::Base
   end
 
   #Homepage
-  get "/" do
+  get "/planets" do
     @title = "Planets"
     @planets = Planet.all
     erb :'planets/home'
   end
+
   #New planets page
   get "/planets/new" do
     @planet = Planet.new
     erb :'planets/new'
   end
+
   #Show planets page
   get "/planets/:id" do
     id = params[:id].to_i
     @planet = Planet.find(id)
     erb :'planets/show'
   end
+
   #Post new
-  post '/' do
+  post '/planets' do
     planet = Planet.new
     planet.title = params[:title]
     planet.image = params[:image]
@@ -34,8 +37,9 @@ class PlanetController < Sinatra::Base
     planet.moons = params[:moons]
     planet.missions = params[:missions]
     planet.save
-    redirect "/"
+    redirect "/planets"
   end
+
   #Edit post
   put '/planets/:id' do
     id = params[:id].to_i
@@ -47,8 +51,16 @@ class PlanetController < Sinatra::Base
     planet.moons = params[:moons]
     planet.missions = params[:missions]
     planet.save
-    redirect '/'
+    redirect '/planets'
   end
+
+  #Delete
+  delete "/planets/:id" do
+    id = params[:id]
+    Planet.destroy(id)
+    redirect "/planets"
+  end
+
   #Show edit page
   get "/planets/:id/edit" do
     id = params[:id].to_i

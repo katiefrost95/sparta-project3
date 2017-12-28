@@ -33,6 +33,12 @@ class Planet
     planet
   end
 
+  def self.destroy(id)
+    conn = self.open_connection
+    sql = "DELETE FROM planets WHERE id = #{id}"
+    conn.exec(sql)
+  end
+
   def self.hydrate(planet_data)
     planet = Planet.new
     planet.id = planet_data['id']
