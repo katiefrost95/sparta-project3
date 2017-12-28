@@ -1,0 +1,10 @@
+<h1><%= @planet.title %></h1>
+<img src="<%= @planet.image %>" alt=""/>
+<h4><%= @planet.body %></h4>
+<h4><%= @planet.moons %></h4>
+<h4><%= @planet.missions %></h4>
+<a href="/planets/<%= @planet.id %>/edit">Edit</a>
+<form action="<%= @planet.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="name" value="Delete">
+</form>

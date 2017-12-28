@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS planets;
+
+CREATE TABLE planets (
+
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  image TEXT,
+  body TEXT,
+  moons TEXT,
+  missions TEXT
+
+);
+
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Mercury' , 'http://www.sciencemadesimple.co.uk/files/2016/05/mercury-global-mosaic-300x300.png', 'Mercury is the smallest planet in the solarsystem. It is the closest planet to the sun with a distance at about 36 million miles. Daily temperatures on Mercury can reach 430 degrees celcius, dropping to -180 degrees celcius at night.', 'Moons: Mercury has no moons', 'Missions: Two missions have been sent to this planet.');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Venus' , 'https://lh3.googleusercontent.com/vWYKrn6wzsL3XGzRFJRUAa5H0lU98AsQAHAD-kNhC5IwPibE1y-A5r42oIF-GA-xX7s=w300', 'Venus is the second closest to the sun and spins in the opposite direction to most planets. The atmosphere of Venus traps heat making it the hottest planet in our solarsystem which a surface temperature hot enough to melt lead.', 'Moons: Venus has no moons', 'Missions: More than 40 spacecrafts have explore venus, the Magellan mission in the early 1990s mapped 98% of the surface of the planet.');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Earth' , 'https://vignette.wikia.nocookie.net/hitchhikers/images/3/36/Earth.jpg/revision/latest?cb=20080521012955', 'Earth is third from the sun and the fifth largest planet in our solar system. Earth formed when gravity pulled swirling gas and dust in and the global oceans cover nearly 70% of the surface of the planet.', 'Moons: Earth is the only planet to have a single moon.', 'Missions: From the vantage point of space, we are able to observe our planet globally, using sensitive instruments to understand the delicate balance among its oceans, air, land and life.');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Mars' , 'https://space-facts.com/wp-content/uploads/mars.jpg', 'Mars is a cold desert world. Similar to Earth, Mars has seasons, polar ice caps, volcanoes, canyons, and weather. However the atmosphere of Mars is too thin for water to exist on the surface', 'Moons: Mars has two moons named Phobos and Deimos.', 'Missions: Several missions have visited this planet, the first successful one being in 1965');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Jupiter' , 'https://cdn.images.express.co.uk/img/dynamic/151/590x/jupiter-828348.jpg', 'Jupiter is the fifth from the sun and the largest in the solar system. The atmosphere is mostly hydrogen and helium and the iconic red spot found on its surface is a storm the size of Earth that has been going on for hundreds of years.', 'Moons: Jupiter has 50 moons with about 16 awaiting confirmation.', 'Missions: Many missions have visited Jupiter, the Juno spacecraft is currently orbiting it.');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Saturn' , 'https://d3jkudlc7u70kh.cloudfront.net/interesting-saturn-facts.jpg', 'The second largest planet in our solar system, Saturn is a massive ball of hydrogen and helium. It is the farthest planet from Earth observable by the human eye.', 'Moons: Saturn has 53 moons and 9 provisional moons.', 'Missions: Only a few missions have visited Saturn. Since 2004, Cassini has been exploring Saturn and the moons and rings.');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Uranus' , 'https://i2-prod.mirror.co.uk/science/article11370299.ece/ALTERNATES/s615/Uranus.jpg', 'Uranus is the seventh planet from the sun and extremely cold and windy. It is surrounded by 13 fainth rings and has a unique tilt as it rotates at nearly a 90-degree angle, making it appear to be spinning on its side.', 'Moons: Uranus has 27 moons.', 'Missions: Voyager 2 is the only spacecraft to have visited Uranus.');
+INSERT INTO planets (title , image, body, moons, missions) VALUES ('Neptune' , 'https://spaceplace.nasa.gov/review/all-about-neptune/neptune3.en.jpg', 'Neptune is dark, cold, and whipped by supersonic winds. The planet is more than 30 times as far from the sun as Earth and takes 165 Earth years to orbit the sun. Neptune is a sister ice giant to Uranus.', 'Moons: Neptune has 13 moons.', 'Missions: Voyager 2 is the only spacecraft to have visited Neptune.');
