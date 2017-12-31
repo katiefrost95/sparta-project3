@@ -1,3 +1,4 @@
+require "sinatra/base"
 class PlanetController < Sinatra::Base
 
   set :root, File.join(File.dirname(__FILE__), "..")
@@ -29,7 +30,7 @@ class PlanetController < Sinatra::Base
   end
 
   #Post new
-  post '/planets' do
+  post '/planets/' do
     planet = Planet.new
     planet.title = params[:title]
     planet.image = params[:image]

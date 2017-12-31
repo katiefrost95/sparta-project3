@@ -1,9 +1,15 @@
-require File.expand_path '../spec_helper.rb', __FILE__
+require 'spec_helper'
+# require 'planet_controller'
 
 describe PlanetController do
+  include Rack::Test::Methods
 
-  it "should allow accessing the home page" do
-    get '/'
-    expect(last_response).to be_ok
+  # def app
+    # Sinatra::Application
+  # end
+
+  before(:each) do
+    @planet = PlanetController.new
   end
+
 end

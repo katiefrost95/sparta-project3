@@ -1,5 +1,7 @@
 <h1>Planets</h1>
 <% @planets.each do |planet| %>
  <h3><a href="/planets/<%= planet.id %>"><%= planet.title %></a></h3>
- <img src="<%= planet.image %>" alt="">
+ <div class="container">
+   <img src="<%= planet.image %>" class="img-rounded" alt="" width="304" height="304">
+ </div>
 <% end %>
