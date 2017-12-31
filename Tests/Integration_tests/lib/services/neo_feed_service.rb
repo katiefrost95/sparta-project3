@@ -37,12 +37,14 @@ class NeoFeed
   end
 
   def get_today_date
-    get_near_earth_objects['2017-12-31']
+    d = DateTime.now()
+    @today = d.strftime("%F")
+    get_near_earth_objects[@today.to_s]
   end
 
   def get_today_links
     links = []
-    get_today_date.each{|x|links << x ['links']}
+    get_today_date.each{|x|links << x["links"]}
     links
   end
 
@@ -54,7 +56,7 @@ class NeoFeed
 
   def get_id
     id = []
-    get_today_date.each{|x|id << x ['neo_reference_id']}
+    get_today_date.each{|x|id << x['neo_reference_id']}
     id
   end
 
@@ -357,4 +359,4 @@ end
 
 x = NeoFeed.new
 x.get_neo_feed_data
-# puts x.ascending_node_longitude
+# puts x.get_today_links
