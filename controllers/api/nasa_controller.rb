@@ -13,8 +13,30 @@ class NasaController < Sinatra::Base
     url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
     response = HTTParty.get(url)
     @keys = response.parsed_response
-    @feed = @keys['near_earth_objects']['2017-12-31'][0]
+    d = DateTime.now()
+    @today = d.strftime("%F")
+    @rand = @keys['near_earth_objects'][@today.to_s]
+    @feed = @rand[rand(@rand.length)]
     erb :'nasa/index'
+  end
+
+  get "/lookup" do
+    @id = ('3542519')
+    url = "https://api.nasa.gov/neo/rest/v1/neo/#{@id}?api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
+    response = HTTParty.get(url)
+    @keys = response.parsed_response
+    @rand = @keys['close_approach_data']
+    @feed = @rand[rand(@rand.length)]
+    erb :'nasa/lookup'
+  end
+
+  get "/browse" do
+    url = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
+    response = HTTParty.get(url)
+    @keys = response.parsed_response
+    @rand= @keys['near_earth_objects']
+    @feed = @rand[rand(@rand.length)]
+    erb :'nasa/browse'
   end
 
 
