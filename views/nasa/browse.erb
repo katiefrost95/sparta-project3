@@ -38,7 +38,7 @@
       <td> Orbiting Body </td><td> <%= @feed['close_approach_data'][0]['orbiting_body'] %></td>
     </tr>
   <% end %>
-  <!-- <% if @feed['close_approach_data'][0..2].include? [1]  %>
+  
     <tr>
       <td> Close Approach date </td><td> <%= @feed['close_approach_data'][1]['close_approach_date'] %> </td>
     </tr>
@@ -51,5 +51,17 @@
     <tr>
       <td> Orbiting Body </td><td> <%= @feed['close_approach_data'][1]['orbiting_body'] %></td>
     </tr>
-  <% end %> -->
+
+  <tr>
+    <td> Orbit ID </td><td> <%= @feed['orbital_data']['orbit_id'] %></td>
+  </tr>
+  <tr>
+    <td> Orbit Determination Date</td><td> <%= @feed['orbital_data']['orbit_determination_date'] %></td>
+  </tr>
+  <tr>
+    <td> Equinox</td><td> <%= @feed['orbital_data']['equinox'] %></td>
+  </tr>
+
+
+
 </table>

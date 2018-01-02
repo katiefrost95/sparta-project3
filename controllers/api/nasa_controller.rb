@@ -2,8 +2,8 @@ require 'HTTParty'
 require 'Json'
 class NasaController < Sinatra::Base
 
-  set :root, File.join(File.dirname(__FILE__), "..")
-  set :views, Proc.new { File.join(root, "views2") }
+  set :root, File.join(File.dirname(__FILE__), "../..")
+  set :views, Proc.new { File.join(root, "views") }
 
   configure :development do
     register Sinatra::Reloader
@@ -20,8 +20,17 @@ class NasaController < Sinatra::Base
     erb :'nasa/index'
   end
 
+  def get_id
+    @id = NasaController.find(params[:user_search_id])
+    # if params[:user_search_id] == nil
+    #   @id = ('2153306')
+    # else
+    #   @id = params[:user_search_id]
+    # end
+  end
+
   get "/lookup" do
-    @id = ('3542519')
+    @id = ('2153306')
     url = "https://api.nasa.gov/neo/rest/v1/neo/#{@id}?api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
     response = HTTParty.get(url)
     @keys = response.parsed_response
@@ -38,7 +47,5 @@ class NasaController < Sinatra::Base
     @feed = @rand[rand(@rand.length)]
     erb :'nasa/browse'
   end
-
-
 
 end
