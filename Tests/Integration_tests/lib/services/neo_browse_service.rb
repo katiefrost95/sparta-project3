@@ -176,7 +176,7 @@ class NeoBrowse
 
   def get_close_approach_date
     close_date = []
-    get_close_approach_data.each{|x| close_date << x[0]['close_approach_date']}
+    get_close_approach_data.each{|x| close_date << x['close_approach_date']}
     close_date
   end
 
