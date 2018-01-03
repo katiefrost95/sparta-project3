@@ -176,193 +176,241 @@ class NeoBrowse
 
   def get_close_approach_date
     close_date = []
-    get_close_approach_data.each{|x| close_date << x['close_approach_date']}
+    get_close_approach_data.each do |x|
+      if x
+        close_date.push(x['close_approach_date'])
+      end
+    end
     close_date
   end
 
-  # def get_epoch_approach_date
-  #   epoch_date = []
-  #   get_close_approach_data.each{|x| epoch_date << x[0]['epoch_date_close_approach']}
-  #   epoch_date
-  # end
-  #
-  # def get_relative_vel
-  #   velocity = []
-  #   get_close_approach_data.each{|x| velocity << x[0]['relative_velocity']}
-  #   velocity
-  # end
-  #
-  # def get_vel_kms
-  #   kmps = []
-  #   get_relative_vel.each{|x| kmps << x['kilometers_per_second']}
-  #   kmps
-  # end
-  #
-  # def get_vel_kmh
-  #   kmph = []
-  #   get_relative_vel.each{|x| kmph << x['kilometers_per_hour']}
-  #   kmph
-  # end
-  #
-  # def get_vel_mph
-  #   mph = []
-  #   get_relative_vel.each{|x| mph << x['miles_per_hour']}
-  #   mph
-  # end
-  #
-  # def get_miss_distance
-  #   miss_distance = []
-  #   get_close_approach_data.each{|x| miss_distance << x[0]['miss_distance']}
-  #   miss_distance
-  # end
-  #
-  # def get_miss_distance_astronomical
-  #   mda = []
-  #   get_miss_distance.each{|x| mda << x['astronomical']}
-  #   mda
-  # end
-  #
-  # def get_miss_distance_lunar
-  #   lunar = []
-  #   get_miss_distance.each{|x| lunar << x['lunar']}
-  #   lunar
-  # end
-  #
-  # def get_miss_distance_km
-  #   km = []
-  #   get_miss_distance.each{|x| km << x['kilometers']}
-  #   km
-  # end
-  #
-  # def get_miss_distance_miles
-  #   miles = []
-  #   get_miss_distance.each{|x| miles << x['miles']}
-  #   miles
-  # end
-  #
-  # def get_orbiting_body
-  #   orbiting_body = []
-  #   get_close_approach_data.each{|x| orbiting_body << x[0]['orbiting_body']}
-  #   orbiting_body
-  # end
-  #
-  # def get_orbital_data
-  #   orbital_data = []
-  #   get_near_earth_objects.each{|x| orbital_data << x['orbital_data']}
-  #   orbital_data
-  # end
-  #
-  # def orbit_id
-  #   orbit_id = []
-  #   get_orbital_data.each{|x| orbit_id << x['orbit_id']}
-  #   orbit_id
-  # end
-  #
-  # def orbit_determination_date
-  #   orbit_determination_date = []
-  #   get_orbital_data.each{|x| orbit_determination_date << x['orbit_determination_date']}
-  #   orbit_determination_date
-  # end
-  #
-  # def orbit_uncertainty
-  #   orbit_uncertainty = []
-  #   get_orbital_data.each{|x| orbit_uncertainty << x['orbit_uncertainty']}
-  #   orbit_uncertainty
-  # end
-  #
-  # def minimum_orbit_intersection
-  #   minimum_orbit_intersection = []
-  #   get_orbital_data.each{|x| minimum_orbit_intersection << x['minimum_orbit_intersection']}
-  #   minimum_orbit_intersection
-  # end
-  #
-  # def jupiter_tisserand_invariant
-  #   jupiter_tisserand_invariant = []
-  #   get_orbital_data.each{|x| jupiter_tisserand_invariant << x['jupiter_tisserand_invariant']}
-  #   jupiter_tisserand_invariant
-  # end
-  #
-  # def epoch_osculation
-  #   epoch_osculation = []
-  #   get_orbital_data.each{|x| epoch_osculation << x['epoch_osculation']}
-  #   epoch_osculation
-  # end
-  #
-  # def eccentricity
-  #   eccentricity = []
-  #   get_orbital_data.each{|x| eccentricity << x['eccentricity']}
-  #   eccentricity
-  # end
-  #
-  # def semi_major_axis
-  #   semi_major_axis = []
-  #   get_orbital_data.each{|x| semi_major_axis << x['semi_major_axis']}
-  #   semi_major_axis
-  # end
-  #
-  # def inclination
-  #   inclination = []
-  #   get_orbital_data.each{|x| inclination << x['inclination']}
-  #   inclination
-  # end
-  #
-  # def ascending_node_longitude
-  #   ascending_node_longitude = []
-  #   get_orbital_data.each{|x| ascending_node_longitude << x['ascending_node_longitude']}
-  #   ascending_node_longitude
-  # end
-  #
-  # def orbital_period
-  #   orbital_period = []
-  #   get_orbital_data.each{|x| orbital_period << x['orbital_period']}
-  #   orbital_period
-  # end
-  #
-  # def perihelion_distance
-  #   perihelion_distance = []
-  #   get_orbital_data.each{|x| perihelion_distance << x['perihelion_distance']}
-  #   perihelion_distance
-  # end
-  #
-  # def perihelion_argument
-  #   perihelion_argument = []
-  #   get_orbital_data.each{|x| perihelion_argument << x['perihelion_argument']}
-  #   perihelion_argument
-  # end
-  #
-  # def aphelion_distance
-  #   aphelion_distance = []
-  #   get_orbital_data.each{|x| aphelion_distance << x['aphelion_distance']}
-  #   aphelion_distance
-  # end
-  #
-  # def perihelion_time
-  #   perihelion_time = []
-  #   get_orbital_data.each{|x| perihelion_time << x['perihelion_time']}
-  #   perihelion_time
-  # end
-  #
-  # def mean_anomaly
-  #   mean_anomaly = []
-  #   get_orbital_data.each{|x| mean_anomaly << x['mean_anomaly']}
-  #   mean_anomaly
-  # end
-  #
-  # def mean_motion
-  #   mean_motion = []
-  #   get_orbital_data.each{|x| mean_motion << x['mean_motion']}
-  #   mean_motion
-  # end
-  #
-  # def equinox
-  #   equinox = []
-  #   get_orbital_data.each{|x| equinox << x['equinox']}
-  #   equinox
-  # end
+  def get_epoch_approach_date
+    epoch_date = []
+    get_close_approach_data.each do |x|
+      if x
+        epoch_date.push(x['epoch_date_close_approach'])
+      end
+    end
+    epoch_date
+  end
+
+  def get_relative_vel
+    velocity = []
+    get_close_approach_data.each do |x|
+      if x
+        velocity.push(x['relative_velocity'])
+      end
+    end
+    velocity
+  end
+
+  def get_vel_kms
+    kmps = []
+    get_relative_vel.each do |x|
+      if x
+        kmps << x['kilometers_per_second']
+      end
+    end
+    kmps
+  end
+
+  def get_vel_kmh
+    kmph = []
+    get_relative_vel.each do |x|
+      if x
+        kmph << x['kilometers_per_hour']
+      end
+    end
+    kmph
+  end
+
+  def get_vel_mph
+    mph = []
+    get_relative_vel.each do |x|
+      if x
+        mph << x['miles_per_hour']
+      end
+    end
+    mph
+  end
+
+  def get_miss_distance
+    miss_distance = []
+    get_close_approach_data.each do |x|
+      if x
+        miss_distance << x['miss_distance']
+      end
+    end
+    miss_distance
+  end
+
+  def get_miss_distance_astronomical
+    mda = []
+    get_miss_distance.each do |x|
+      if x
+        mda << x['astronomical']
+      end
+    end
+    mda
+  end
+
+  def get_miss_distance_lunar
+    lunar = []
+    get_miss_distance.each do |x|
+      if x
+        lunar << x['lunar']
+      end
+    end
+    lunar
+  end
+
+  def get_miss_distance_km
+    km = []
+    get_miss_distance.each do |x|
+      if x
+        km << x['kilometers']
+      end
+    end
+    km
+  end
+
+  def get_miss_distance_miles
+    miles = []
+    get_miss_distance.each do |x|
+      if x
+        miles << x['miles']
+      end
+    end
+    miles
+  end
+
+  def get_orbiting_body
+    orbiting_body = []
+    get_close_approach_data.each do |x|
+      if x
+        orbiting_body << x['orbiting_body']
+      end
+    end
+    orbiting_body
+  end
+
+  def get_orbital_data
+    orbital_data = []
+    get_near_earth_objects.each{|x| orbital_data << x['orbital_data']}
+    orbital_data
+  end
+
+  def orbit_id
+    orbit_id = []
+    get_orbital_data.each{|x| orbit_id << x['orbit_id']}
+    orbit_id
+  end
+
+  def orbit_determination_date
+    orbit_determination_date = []
+    get_orbital_data.each{|x| orbit_determination_date << x['orbit_determination_date']}
+    orbit_determination_date
+  end
+
+  def orbit_uncertainty
+    orbit_uncertainty = []
+    get_orbital_data.each{|x| orbit_uncertainty << x['orbit_uncertainty']}
+    orbit_uncertainty
+  end
+
+  def minimum_orbit_intersection
+    minimum_orbit_intersection = []
+    get_orbital_data.each{|x| minimum_orbit_intersection << x['minimum_orbit_intersection']}
+    minimum_orbit_intersection
+  end
+
+  def jupiter_tisserand_invariant
+    jupiter_tisserand_invariant = []
+    get_orbital_data.each{|x| jupiter_tisserand_invariant << x['jupiter_tisserand_invariant']}
+    jupiter_tisserand_invariant
+  end
+
+  def epoch_osculation
+    epoch_osculation = []
+    get_orbital_data.each{|x| epoch_osculation << x['epoch_osculation']}
+    epoch_osculation
+  end
+
+  def eccentricity
+    eccentricity = []
+    get_orbital_data.each{|x| eccentricity << x['eccentricity']}
+    eccentricity
+  end
+
+  def semi_major_axis
+    semi_major_axis = []
+    get_orbital_data.each{|x| semi_major_axis << x['semi_major_axis']}
+    semi_major_axis
+  end
+
+  def inclination
+    inclination = []
+    get_orbital_data.each{|x| inclination << x['inclination']}
+    inclination
+  end
+
+  def ascending_node_longitude
+    ascending_node_longitude = []
+    get_orbital_data.each{|x| ascending_node_longitude << x['ascending_node_longitude']}
+    ascending_node_longitude
+  end
+
+  def orbital_period
+    orbital_period = []
+    get_orbital_data.each{|x| orbital_period << x['orbital_period']}
+    orbital_period
+  end
+
+  def perihelion_distance
+    perihelion_distance = []
+    get_orbital_data.each{|x| perihelion_distance << x['perihelion_distance']}
+    perihelion_distance
+  end
+
+  def perihelion_argument
+    perihelion_argument = []
+    get_orbital_data.each{|x| perihelion_argument << x['perihelion_argument']}
+    perihelion_argument
+  end
+
+  def aphelion_distance
+    aphelion_distance = []
+    get_orbital_data.each{|x| aphelion_distance << x['aphelion_distance']}
+    aphelion_distance
+  end
+
+  def perihelion_time
+    perihelion_time = []
+    get_orbital_data.each{|x| perihelion_time << x['perihelion_time']}
+    perihelion_time
+  end
+
+  def mean_anomaly
+    mean_anomaly = []
+    get_orbital_data.each{|x| mean_anomaly << x['mean_anomaly']}
+    mean_anomaly
+  end
+
+  def mean_motion
+    mean_motion = []
+    get_orbital_data.each{|x| mean_motion << x['mean_motion']}
+    mean_motion
+  end
+
+  def equinox
+    equinox = []
+    get_orbital_data.each{|x| equinox << x['equinox']}
+    equinox
+  end
 
 
 end
 
 x = NeoBrowse.new
 x.get_neo_browse_data
-puts x.get_close_approach_date
+# puts x.get_close_approach_data
