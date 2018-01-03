@@ -1,0 +1,15 @@
+<div class = "planet_homepage">
+  <h1 class="planet_title">Planets</h1>
+  <% @planets.each do |planet| %>
+  <div class="pictures">
+    <h3><a href="/planets/<%= planet.id %>"><%= planet.title %></a></h3>
+    <% if planet.title == "Jupiter" || planet.title == "Uranus" || planet.title == "Neptune" %>
+    <img src="<%= planet.image %>" class="img-rounded" alt="" width="200" height="150">
+    <% elsif planet.title == "Saturn" %>
+    <img src="<%= planet.image %>" class="img-rounded" alt="" width="180" height="150">
+    <% else %>
+    <img src="<%= planet.image %>" class="img-rounded" alt="" width="150" height="150">
+    <% end %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+.center {
+  text-align: center;
+}
+.pictures {
+  display:inline-block;
+  float:left;
+  text-align: center;
+}
+.planet_title {
+  margin-top: 0;
+  /*display:inline-block;*/
+}
+.planet_homepage {
+  /*background-color: red;*/
+  height: 800px;
+  background-image: url("http://avante.biz/wp-content/uploads/Trippy-Space-Backgrounds/Trippy-Space-Backgrounds-039.jpg");
+  background-size: cover;
+  margin-top: -20px;
+}
