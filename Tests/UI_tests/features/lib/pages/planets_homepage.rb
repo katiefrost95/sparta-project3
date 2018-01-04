@@ -13,7 +13,7 @@ class PlanetsPage
   NAV_LOOKUP="nav_lookup"
   NAV_BROWSE="nav_browse"
 
-  def visit_planets_homepage
+  def visit_planets_homepage 
     visit('/planets')
   end
 

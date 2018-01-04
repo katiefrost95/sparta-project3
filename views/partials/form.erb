@@ -1,27 +1,27 @@
 <form action="/planets/<%= @planet.id %>" method="POST">
   <div>
-    <label>Title</label>
+    <label class="post_label">Title</label>
     <input id="form_title" type="text" name="title" placeholder="Enter a title" value="<%= @planet.title %>">
   </div>
   <br>
   <div>
-    <label>Image</label>
+    <label class="post_label">Image</label>
     <textarea id="image_url" name="image" rows="1" cols="60" placeholder="Enter the image URL"><%= @planet.image %></textarea>
   </div>
   <br>
   <div>
-    <label>Body</label>
-    <textarea id="form_body" name="body" rows="8" cols="40" placeholder="The body of the post"><%= @planet.body %></textarea>
+    <label class="post_label">Body</label>
+    <textarea id="form_body" name="body" rows="4" cols="50" placeholder="The body of the post"><%= @planet.body %></textarea>
   </div>
   <br>
   <div>
-    <label>Moons</label>
-    <textarea id="form_moons" name="moons" rows="8" cols="40" placeholder="The body of the post"><%= @planet.moons %></textarea>
+    <label class="post_label">Moons</label>
+    <textarea id="form_moons" name="moons" rows="4" cols="40" placeholder="The body of the post"><%= @planet.moons %></textarea>
   </div>
   <br>
   <div>
-    <label>Missions</label>
-    <textarea id="form_missions" name="missions" rows="8" cols="40" placeholder="The body of the post"><%= @planet.missions %></textarea>
+    <label class="post_label">Missions</label>
+    <textarea id="form_missions" name="missions" rows="4" cols="30" placeholder="The body of the post"><%= @planet.missions %></textarea>
   </div>
   <br>
   <div>
