@@ -34,3 +34,42 @@ textarea {
   border-radius: 5px;
   border: 1px solid black;
 }
+
+/*navbar*/
+#nav_planets {
+  font-size: 20px;
+}
+#nav_asteroids {
+  font-size: 20px;
+}
+
+/*Asteroid Pages*/
+.table {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.asteroid_title {
+  text-align: center;
+}
+#feed_refresh_button {
+  float: right;
+  margin-right: 347px;
+}
+#user_search_id {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#id_search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+#id_button {
+  margin-bottom: 8px;
+}
+.table_labels {
+  font-size: 17px;
+  font-weight: bold;
+}
