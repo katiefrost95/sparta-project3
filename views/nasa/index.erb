@@ -5,7 +5,7 @@
     <td> Id </td><td> <%= @feed['neo_reference_id'] %> </td>
   </tr>
   <tr>
-    <td> Name </td><td> <%= @feed['name'] %> </td>
+    <td> Name </td><td id="asteroid_feed_name"> <%= @feed['name'] %> </td>
   </tr>
   <tr>
     <td> Nasa URL </td><td> <%= @feed['nasa_jpl_url'] %> </td>
@@ -36,4 +36,4 @@
   </tr>
 </table>
 
-<a href="/"><button type="button" class="btn btn-default">New Asteroid</button></a>
+<a href="/"><button id="feed_refresh_button" type="button" class="btn btn-default">New Asteroid</button></a>

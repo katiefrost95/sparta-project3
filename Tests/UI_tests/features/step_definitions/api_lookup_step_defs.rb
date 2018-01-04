@@ -13,5 +13,4 @@ end
 
 Then("the new asteroid data for that id should show") do
   expect(api_lookup.find_new_id).to eq("2439898")
-  sleep 1
 end

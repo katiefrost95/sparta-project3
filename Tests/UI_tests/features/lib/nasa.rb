@@ -3,6 +3,7 @@ require_relative '../lib/pages/planets_edit'
 require_relative '../lib/pages/planet_delete'
 require_relative '../lib/pages/planets_new'
 require_relative '../lib/pages/api_lookup'
+require_relative '../lib/pages/api_feed'
 
 module NasaSite
 
@@ -24,5 +25,9 @@ module NasaSite
 
   def api_lookup
     ApiLookup.new
+  end
+
+  def api_feed
+    ApiFeed.new
   end
 end
