@@ -21,11 +21,10 @@ class NasaController < Sinatra::Base
   end
 
   def get_id
-    # @id = NasaController.find(params[:user_search_id])
-    if params[:user_search_id] == nil
+    if params[:id] == nil
       @id = ('2153306')
     else
-      @id = params[:user_search_id]
+      @id = params[:id]
     end
   end
 
