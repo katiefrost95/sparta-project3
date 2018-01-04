@@ -1,35 +1,27 @@
 <nav class="navbar navbar-inverse" style="height:50px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="font-size:30px;">Space</a>
+      <a class="navbar-brand" href="/planets" style="font-size:30px;">Space</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="navbar_link"><a href="/planets" style="font-size:20px;">Planets</a></li>
-      <li><a href="/planets/new" style="font-size:20px;">New Post</a></li>
-      <li><a href="/" style="font-size:20px;">Asteroid Feed</a></li>
-      <li><a href="/lookup" style="font-size:20px;">Search Asteroid by ID</a></li>
-      <li><a href="/browse" style="font-size:20px;">Browse all asteroids</a></li>
+      <li class="dropdown">
+        <a id="nav_planets" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planets <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a id="nav_allplanets" href="/planets">All Planets</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a id="nav_newpost" href="/planets/new">New Post</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a  id="nav_asteroids" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asteroids <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a id="nav_feed" href="/">Today's Asteroid Feed</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a id="nav_lookup" href="/lookup">Search Asteroid by ID</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a id="nav_browse" href="/browse">Browse all Asteroids</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
-
-
-
-<!-- <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planets <span class="caret"></span></a>
-</li>
-<ul class="dropdown-menu">
-  <li><a href="/planets">All Planets</a></li>
-  <li role="separator" class="divider"></li>
-  <li><a href="/planets/new">New Post</a></li>
-</ul>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asteroids <span class="caret"></span></a>
-</li>
-<ul class="dropdown-menu">
-  <li><a href="/">Today's Asteroid Feed</a></li>
-  <li role="separator" class="divider"></li>
-  <li><a href="/lookup">Search Asteroid by ID</a></li>
-  <li role="separator" class="divider"></li>
-  <li><a href="/browse">Browse all Asteroids</a></li>
-</ul> -->
