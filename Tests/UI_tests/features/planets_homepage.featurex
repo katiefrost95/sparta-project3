@@ -1,0 +1,10 @@
+Feature: Planets Homepage
+
+  Scenario: If I click on a planet I will be taken to that planet's show page
+    Given I am on the planet homepage
+    When I click on a planet link
+    Then I will be taken to that planet's show page
+
+
+  Scenario: If click on navbar links I should be taken to the right location
+    Given I am on the planet homepage

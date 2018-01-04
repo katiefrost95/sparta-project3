@@ -21,16 +21,16 @@ class NasaController < Sinatra::Base
   end
 
   def get_id
-    @id = NasaController.find(params[:user_search_id])
-    # if params[:user_search_id] == nil
-    #   @id = ('2153306')
-    # else
-    #   @id = params[:user_search_id]
-    # end
+    # @id = NasaController.find(params[:user_search_id])
+    if params[:user_search_id] == nil
+      @id = ('2153306')
+    else
+      @id = params[:user_search_id]
+    end
   end
 
   get "/lookup" do
-    @id = ('2153306')
+    @id = get_id
     url = "https://api.nasa.gov/neo/rest/v1/neo/#{@id}?api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
     response = HTTParty.get(url)
     @keys = response.parsed_response

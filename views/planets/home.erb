@@ -2,7 +2,7 @@
   <h1 class="planet_title">Planets</h1>
   <% @planets.each do |planet| %>
   <div class="pictures">
-    <h3><a href="/planets/<%= planet.id %>"><%= planet.title %></a></h3>
+    <h3><a id="planet_header" href="/planets/<%= planet.id %>"><%= planet.title %></a></h3>
     <% if planet.title == "Jupiter" || planet.title == "Uranus" || planet.title == "Neptune" %>
     <img src="<%= planet.image %>" class="img-rounded" alt="" width="200" height="150">
     <% elsif planet.title == "Saturn" %>
