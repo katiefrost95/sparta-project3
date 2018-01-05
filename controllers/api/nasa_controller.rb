@@ -1,5 +1,6 @@
 require 'HTTParty'
 require 'Json'
+require "sinatra"
 class NasaController < Sinatra::Base
 
   set :root, File.join(File.dirname(__FILE__), "../..")
