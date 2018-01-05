@@ -4,9 +4,8 @@ describe 'NasaController' do
 
   def app
     NasaController.new
-    # Sinatra::Application
   end
-  #
+
   before(:each) do
     @nasa = NasaController.new
   end
