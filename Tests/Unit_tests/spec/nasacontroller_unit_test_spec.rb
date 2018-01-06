@@ -10,15 +10,24 @@ describe 'NasaController' do
     @nasa = NasaController.new
   end
 
-  it 'should load the asteroid feed page and display the data' do
+  it 'should load the asteroid feed page' do
     get "/"
     expect(last_response.status).to eq 200
+  end
+
+  it 'should display asteroid feed data' do
+    get "/"
     expect(last_response.body).to include("Name")
   end
 
   it 'should load the asteroid lookup page and show correct data' do
     get "/lookup"
     expect(last_response.status).to eq 200
+    expect(last_response.body).to include("Name")
+  end
+
+  it 'should display asteroid lookup page data' do
+    get "/lookup"
     expect(last_response.body).to include("Name")
   end
 
@@ -30,6 +39,10 @@ describe 'NasaController' do
   it 'should load the asteroid browse page and display the data' do
     get "/browse"
     expect(last_response.status).to eq 200
+  end
+
+  it 'should display asteroid browse data' do
+    get "/browse"
     expect(last_response.body).to include("Name")
   end
 

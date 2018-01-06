@@ -4,7 +4,6 @@ require 'rspec'
 require 'pry'
 require_relative '../lib/nasa'
 
-
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app,:browser => :chrome)
 end
