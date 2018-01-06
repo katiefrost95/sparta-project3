@@ -42,6 +42,7 @@ textarea {
 #form_title {
   border-radius: 5px;
   border: 1px solid black;
+  width:442px;
 }
 .title {
   color: #71a8ca;
@@ -91,10 +92,17 @@ textarea {
   margin-bottom: 8px;
 }
 .table_labels {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: bold;
 }
-
+.data {
+  font-size: 18px;
+}
+.asteroid_background {
+  background-image: url('https://i.ytimg.com/vi/T40NSkd7Olc/maxresdefault.jpg');
+  background-size: cover;
+  height:650px;
+}
 /*Show page*/
 .show_background {
   background-image: url('https://i.ytimg.com/vi/T40NSkd7Olc/maxresdefault.jpg');

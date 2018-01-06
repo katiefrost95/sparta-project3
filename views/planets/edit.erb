@@ -1,4 +1,6 @@
-<h1><%= @title %></h1>
-<h1>Edit</h1>
-<p>Edit your posts here!</p>
-<%= erb(:'partials/form', :layout => false) %>
+<div class="form_page">
+  <h1><%= @title %></h1>
+  <h1 class="post_headers">Edit</h1>
+  <p class="form_comment post_headers">Edit your posts here!</p>
+  <%= erb(:'partials/form', :layout => false) %>
+</div>

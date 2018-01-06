@@ -11,22 +11,23 @@
   <br>
   <div>
     <label class="post_label body">Body</label>
-    <textarea id="form_body" name="body" rows="4" cols="50" placeholder="The body of the post"><%= @planet.body %></textarea>
+    <textarea id="form_body" name="body" rows="4" cols="60" placeholder="The body of the post"><%= @planet.body %></textarea>
   </div>
   <br>
   <div>
     <label class="post_label moons">Moons</label>
-    <textarea id="form_moons" name="moons" rows="4" cols="40" placeholder="The body of the post"><%= @planet.moons %></textarea>
+    <textarea id="form_moons" name="moons" rows="4" cols="60" placeholder="The body of the post"><%= @planet.moons %></textarea>
   </div>
   <br>
   <div>
     <label class="post_label missions">Missions</label>
-    <textarea id="form_missions" name="missions" rows="4" cols="30" placeholder="The body of the post"><%= @planet.missions %></textarea>
+    <textarea id="form_missions" name="missions" rows="4" cols="60" placeholder="The body of the post"><%= @planet.missions %></textarea>
   </div>
   <br>
   <div>
     <input id="save_button" type="submit" value="Save planet">
   </div>
+  <br>
   <% if(@planet.id) %>
     <input type="hidden" name="_method" value="PUT">
   <% end %>
