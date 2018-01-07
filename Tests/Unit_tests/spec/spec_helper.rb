@@ -3,8 +3,6 @@ require 'rspec'
 require_relative '../../../controllers/api/nasa_controller'
 require_relative '../../../controllers/planet_controller'
 require 'rack/test'
-# require 'sinatra'
-# require 'sinatra/base'
 #
 RSpec.configure do|config|
   config.color = true
