@@ -1,7 +1,7 @@
 <div class="center show_background">
   <h1><%= @planet.title %></h1>
   <br>
-  <% if @planet.title == "Mars" %>
+  <% if @planet.title == "Mars" || @planet.title == "Saturn" %>
     <img id="showpage_image" src="<%= @planet.image %>" alt="" height="430";/>
   <% else %>
     <img id="showpage_image" src="<%= @planet.image %>" alt=""/>

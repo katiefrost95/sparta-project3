@@ -3,15 +3,17 @@
   <% @planets.each do |planet| %>
   <div class="pictures">
     <% if planet.title == "Uranus" || planet.title == "Neptune" %>
-    <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="200" height="150"></a>
+      <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="200" height="150"></a>
     <% elsif planet.title == "Jupiter" %>
-    <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="240" height="150"></a>
+      <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="240" height="150"></a>
     <% elsif planet.title == "Saturn" %>
-    <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="180" height="150"></a>
+      <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="180" height="150"></a>
     <% else %>
-    <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="150" height="150"></a>
+      <a id="planet_header" href="/planets/<%= planet.id %>"><img src="<%= planet.image %>" class="img-rounded" alt="" width="150" height="150"></a>
     <% end %>
-    <!-- <h3><a id="planet_header" href="/planets/<%= planet.id %>"><%= planet.title %></a></h3> -->
+    <% if planet.title == "Pluto" %>
+      <h3><a id="planet_header" href="/planets/<%= planet.id %>"><%= planet.title %></a></h3>
+    <% end %>
   </div>
   <% end %>
 </div>
