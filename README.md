@@ -12,6 +12,8 @@ Clone the repository into your account by running the following command in the t
 
     git clone git@github.com:katiefrost95/sparta-project3.git
 
+And have the 'gem install rack' so you can run 'rackup' to get the server running.
+
 You need to have the Sinatra, sinatra/reloader, pg, http, httparty, and rspec gems installed by, for example, running the command
 
     'gem install sinatra'
@@ -75,3 +77,23 @@ When writing the tests write them in the following format:
 ### UI Tests
 
 ##### Running the tests
+
+The UI tests are located in the Tests/UI_tests folder where I have created a page object model to run front end tests of the web app and follow the user paths.
+
+To run the tests you need to have capybara, selenium, rspec and cucumber installed and from your terminal you cd into the UI tests folder, and run the command 'cucumber' to start the tests running.
+
+##### Creating new tests
+
+To create a new test you need to use gherkin and add a new scenario in a .feature file which follows the given/when/then format. Create a file in the pages folder which calls the links you want from the web app in methods. And write the actual tests in the step_definitions folder which carry the following format:
+
+    Given("I am on the api feed page") do
+      api_feed.visit_api_feed_page
+    end
+
+    When("I click on the new asteroid button") do
+      api_feed.click_refresh_button
+    end
+
+    Then("I should see new asteroid data") do
+      api_feed.find_new_feed_name
+    end
