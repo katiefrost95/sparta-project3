@@ -1,7 +1,11 @@
 <div class="center show_background">
   <h1><%= @planet.title %></h1>
   <br>
-  <img id="showpage_image" src="<%= @planet.image %>" alt=""/>
+  <% if @planet.title == "Mars" %>
+    <img id="showpage_image" src="<%= @planet.image %>" alt="" height="430";/>
+  <% else %>
+    <img id="showpage_image" src="<%= @planet.image %>" alt=""/>
+  <% end %>
   <div class="show_body">
     <br>
     <h4 id="description"><%= @planet.body %></h4>

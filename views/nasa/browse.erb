@@ -42,20 +42,6 @@
         <td class="table_labels"> Orbiting Body </td><td class="data"> <%= @feed['close_approach_data'][0]['orbiting_body'] %></td>
       </tr>
     <% end %>
-    <% if @feed['close_approach_data'][1] %>
-      <tr>
-        <td class="table_labels"> Close Approach date </td><td class="data"> <%= @feed['close_approach_data'][1]['close_approach_date'] %> </td>
-      </tr>
-      <tr>
-        <td class="table_labels"> Velocity </td><td class="data"> <%= @feed['close_approach_data'][1]['relative_velocity']['miles_per_hour'] %> mph</td>
-      </tr>
-      <tr>
-        <td class="table_labels"> Miss distance </td><td class="data"> <%= @feed['close_approach_data'][1]['miss_distance']['miles'] %> miles</td>
-      </tr>
-      <tr>
-        <td class="table_labels"> Orbiting Body </td><td class="data"> <%= @feed['close_approach_data'][1]['orbiting_body'] %></td>
-      </tr>
-    <% end %>
     <tr>
       <td class="table_labels"> Orbit ID </td><td class="data"> <%= @feed['orbital_data']['orbit_id'] %></td>
     </tr>

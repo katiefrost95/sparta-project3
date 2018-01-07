@@ -14,6 +14,10 @@ Clone the repository into your account by running the following command in the t
 
 And have the 'gem install rack' so you can run 'rackup' to get the server running.
 
+To get the database running in your terminal run the command:
+
+    'psql -d planets -f seed.sql'
+
 You need to have the Sinatra, sinatra/reloader, pg, http, httparty, and rspec gems installed by, for example, running the command
 
     'gem install sinatra'
