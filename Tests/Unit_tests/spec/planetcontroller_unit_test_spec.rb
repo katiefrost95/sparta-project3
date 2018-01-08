@@ -17,11 +17,6 @@ describe 'PlanetController' do
     expect(last_response.status).to eq 200
   end
 
-  it 'shoudl display the planets homepage data' do
-    get "/planets"
-    expect(last_response.body).to include("Jupiter")
-  end
-
   it 'should load new planets page' do
     get "/planets/new"
     expect(last_response.status).to eq 200
