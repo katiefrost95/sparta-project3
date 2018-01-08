@@ -70,6 +70,10 @@ HTTParty and json need to be required at the top of the service pages- the pages
 
 To run the tests from the terminal, assuming the rspec gem has been installed, you simply run the command rspec from the terminal.
 
+    'gem install rspec'
+
+    'rspec' -- command to run the tests
+
 ##### Creating new tests
 
 The tests files are in the spec folder and the methods which call data are in the services folder.
