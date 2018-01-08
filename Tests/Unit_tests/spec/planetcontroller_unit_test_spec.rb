@@ -52,12 +52,4 @@ describe 'PlanetController' do
     expect(last_response.body).to include("Edit your posts here!")
   end
 
-  # it 'should redirect to correct page when editing post' do
-  #   put "/planets/8"
-  #   expect(last_response).to be_redirect
-  #   follow_redirect!
-  #   expect(last_request.location).to include('/planets')
-  # end
-
-
 end

@@ -12,6 +12,10 @@ Clone the repository into your account by running the following command in the t
 
     git clone git@github.com:katiefrost95/sparta-project3.git
 
+    cd sparta-project3
+
+    bundle install
+
 And have the 'gem install rack' so you can run 'rackup' to get the server running.
 
 To get the database running in your terminal run the command:
