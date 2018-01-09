@@ -1,46 +1,48 @@
-<h1>Lookup Asteroid by ID</h1>
-<form id="user_search_id">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search" style="width:200px;">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-<table class="table table-sm">
-  <!-- <th>Asteroid Feed</th> -->
-  <tr>
-    <td> Id </td><td> <%= @keys['neo_reference_id'] %> </td>
-  </tr>
-  <tr>
-    <td> Name </td><td> <%= @keys['name'] %> </td>
-  </tr>
-  <tr>
-    <td> Nasa URL </td><td> <%= @keys['nasa_jpl_url'] %> </td>
-  </tr>
-  <tr>
-    <td> Magnitude </td><td> <%= @keys['absolute_magnitude_h'] %> </td>
-  </tr>
-  <tr>
-    <td> Estimated min diameter</td><td> <%= @keys['estimated_diameter']['kilometers']['estimated_diameter_min'] %> km </td>
-  </tr>
-  <tr>
-    <td> Estimated max diameter </td><td> <%= @keys['estimated_diameter']['kilometers']['estimated_diameter_max'] %> km</td>
-  </tr>
-  <tr>
-    <td> Hazardous? </td><td> <%= @keys['is_potentially_hazardous_asteroid'] %> </td>
-  </tr>
-  <tr>
-    <td> Close Approach date </td><td> <%= @feed['close_approach_date'] %> </td>
-  </tr>
-  <tr>
-    <td> Epoch close Approach date </td><td> <%= @feed['epoch_date_close_approach'] %> </td>
-  </tr>
-  <tr>
-    <td> Velocity </td><td> <%= @feed['relative_velocity']['miles_per_hour'] %> mph</td>
-  </tr>
-  <tr>
-    <td> Miss distance </td><td> <%= @feed['miss_distance']['miles'] %> miles</td>
-  </tr>
-  <tr>
-    <td> Orbiting Body </td><td> <%= @feed['orbiting_body'] %></td>
-  </tr>
-</table>
+<div class="asteroid_background">
+  <h1 class="asteroid_title">Lookup Asteroid by ID</h1>
+  <form id="user_search_id">
+    <div class="form-group">
+      <input id="id_search" type="text" name="id" class="form-control" placeholder="Search by ID" style="width:200px;">
+    </div>
+    <button id="id_button" type="submit" class="btn btn-default">Submit</button>
+  </form>
+  <br>
+  <table class="table table-sm table-bordered">
+    <tr>
+      <td class="table_labels"> Id </td><td class="data" id="asteroid_lookup_id"> <%= @keys['neo_reference_id'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Name </td><td class="data"> <%= @keys['name'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Nasa URL </td><td class="data"> <%= @keys['nasa_jpl_url'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Magnitude </td><td class="data"> <%= @keys['absolute_magnitude_h'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Estimated min diameter</td><td class="data"> <%= @keys['estimated_diameter']['kilometers']['estimated_diameter_min'] %> km </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Estimated max diameter </td><td class="data"> <%= @keys['estimated_diameter']['kilometers']['estimated_diameter_max'] %> km</td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Hazardous? </td><td class="data"> <%= @keys['is_potentially_hazardous_asteroid'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Close Approach date </td><td class="data"> <%= @feed['close_approach_date'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Epoch close Approach date </td><td class="data"> <%= @feed['epoch_date_close_approach'] %> </td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Velocity </td><td class="data"> <%= @feed['relative_velocity']['miles_per_hour'] %> mph</td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Miss distance </td><td class="data"> <%= @feed['miss_distance']['miles'] %> miles</td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Orbiting Body </td><td class="data"> <%= @feed['orbiting_body'] %></td>
+    </tr>
+  </table>
+</div>

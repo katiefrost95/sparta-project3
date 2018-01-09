@@ -1,67 +1,55 @@
-<h1>Browse All Asteroids</h1>
-<table class="table table-sm">
-  <!-- <th>Asteroid Feed</th> -->
-  <tr>
-    <td> Id </td><td> <%= @feed['neo_reference_id'] %> </td>
-  </tr>
-  <tr>
-    <td> Name </td><td> <%= @feed['name'] %> </td>
-  </tr>
-  <tr>
-    <td> Nasa URL </td><td> <%= @feed['nasa_jpl_url'] %> </td>
-  </tr>
-  <tr>
-    <td> Magnitude </td><td> <%= @feed['absolute_magnitude_h'] %> </td>
-  </tr>
-  <tr>
-    <td> Estimated min diameter</td><td> <%= @feed['estimated_diameter']['kilometers']['estimated_diameter_min'] %> km </td>
-  </tr>
-  <tr>
-    <td> Estimated max diameter </td><td> <%= @feed['estimated_diameter']['kilometers']['estimated_diameter_max'] %> km</td>
-  </tr>
-  <tr>
-    <td> Hazardous? </td><td> <%= @feed['is_potentially_hazardous_asteroid'] %> </td>
-  </tr>
-  <% if @feed['close_approach_data'].empty? %>
-    <p></p>
-  <% else %>
+<div class="asteroid_background">
+  <h1 class="asteroid_title">
+    Browse All Asteroids
+    <a href="/browse"><button id="feed_refresh_button" type="button" class="btn btn-default">New Asteroid</button></a>
+  </h1>
+  <br>
+  <table class="table table-sm table-bordered">
     <tr>
-      <td> Close Approach date </td><td> <%= @feed['close_approach_data'][0]['close_approach_date'] %> </td>
+      <td class="table_labels"> Id </td><td class="data"> <%= @feed['neo_reference_id'] %> </td>
     </tr>
     <tr>
-      <td> Velocity </td><td> <%= @feed['close_approach_data'][0]['relative_velocity']['miles_per_hour'] %> mph</td>
+      <td class="table_labels"> Name </td><td class="data"> <%= @feed['name'] %> </td>
     </tr>
     <tr>
-      <td> Miss distance </td><td> <%= @feed['close_approach_data'][0]['miss_distance']['miles'] %> miles</td>
+      <td class="table_labels"> Nasa URL </td><td class="data"> <%= @feed['nasa_jpl_url'] %> </td>
     </tr>
     <tr>
-      <td> Orbiting Body </td><td> <%= @feed['close_approach_data'][0]['orbiting_body'] %></td>
-    </tr>
-  <% end %>
-  
-    <tr>
-      <td> Close Approach date </td><td> <%= @feed['close_approach_data'][1]['close_approach_date'] %> </td>
+      <td class="table_labels"> Magnitude </td><td class="data"> <%= @feed['absolute_magnitude_h'] %> </td>
     </tr>
     <tr>
-      <td> Velocity </td><td> <%= @feed['close_approach_data'][1]['relative_velocity']['miles_per_hour'] %> mph</td>
+      <td class="table_labels"> Estimated min diameter</td><td class="data"> <%= @feed['estimated_diameter']['kilometers']['estimated_diameter_min'] %> km </td>
     </tr>
     <tr>
-      <td> Miss distance </td><td> <%= @feed['close_approach_data'][1]['miss_distance']['miles'] %> miles</td>
+      <td class="table_labels"> Estimated max diameter </td><td class="data"> <%= @feed['estimated_diameter']['kilometers']['estimated_diameter_max'] %> km</td>
     </tr>
     <tr>
-      <td> Orbiting Body </td><td> <%= @feed['close_approach_data'][1]['orbiting_body'] %></td>
+      <td class="table_labels"> Hazardous? </td><td class="data"> <%= @feed['is_potentially_hazardous_asteroid'] %> </td>
     </tr>
-
-  <tr>
-    <td> Orbit ID </td><td> <%= @feed['orbital_data']['orbit_id'] %></td>
-  </tr>
-  <tr>
-    <td> Orbit Determination Date</td><td> <%= @feed['orbital_data']['orbit_determination_date'] %></td>
-  </tr>
-  <tr>
-    <td> Equinox</td><td> <%= @feed['orbital_data']['equinox'] %></td>
-  </tr>
-
-
-
-</table>
+    <% if @feed['close_approach_data'].empty? %>
+      <p></p>
+    <% else %>
+      <tr>
+        <td class="table_labels"> Close Approach date </td><td class="data"> <%= @feed['close_approach_data'][0]['close_approach_date'] %> </td>
+      </tr>
+      <tr>
+        <td class="table_labels"> Velocity </td><td class="data"> <%= @feed['close_approach_data'][0]['relative_velocity']['miles_per_hour'] %> mph</td>
+      </tr>
+      <tr>
+        <td class="table_labels"> Miss distance </td><td class="data"> <%= @feed['close_approach_data'][0]['miss_distance']['miles'] %> miles</td>
+      </tr>
+      <tr>
+        <td class="table_labels"> Orbiting Body </td><td class="data"> <%= @feed['close_approach_data'][0]['orbiting_body'] %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td class="table_labels"> Orbit ID </td><td class="data"> <%= @feed['orbital_data']['orbit_id'] %></td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Orbit Determination Date</td><td class="data"> <%= @feed['orbital_data']['orbit_determination_date'] %></td>
+    </tr>
+    <tr>
+      <td class="table_labels"> Equinox</td><td class="data"> <%= @feed['orbital_data']['equinox'] %></td>
+    </tr>
+  </table>
+</div>

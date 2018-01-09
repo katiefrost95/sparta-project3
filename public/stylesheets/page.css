@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+/*planets homepage*/
 .center {
   text-align: center;
 }
@@ -5,15 +9,110 @@
   display:inline-block;
   float:left;
   text-align: center;
-}
-.planet_title {
-  margin-top: 0;
-  /*display:inline-block;*/
+  margin-top: 25px;
 }
 .planet_homepage {
-  /*background-color: red;*/
   height: 800px;
   background-image: url("http://avante.biz/wp-content/uploads/Trippy-Space-Backgrounds/Trippy-Space-Backgrounds-039.jpg");
   background-size: cover;
-  margin-top: -20px;
+  margin-top: -10px;
+}
+#planet_header {
+  color: #b1adb5;
+}
+/*New post page*/
+.form_page {
+  text-align: center;
+  background-image: url('https://lh5.ggpht.com/164IrwPqtLdDNrkTwMOaooUlpakbkwhYhZW2Nc1f59W-MCW6Rw5HUxFcMXPI1UANFpk=h900');
+  background-size: cover;
+}
+.post_headers{
+  color: #9aceef;
+}
+.form_comment {
+  font-size: 20px;
+}
+.post_label {
+  display: block;
+  font-size: 20px;
+}
+textarea {
+  border-radius: 5px;
+}
+#form_title {
+  border-radius: 5px;
+  border: 1px solid black;
+  width:442px;
+}
+.title {
+  color: #71a8ca;
+}
+.body {
+  color: #498cb5;
+}
+.moons {
+  color: #0E2947;
+}
+.missions {
+  color: #1f3d58;
+}
+/*navbar*/
+#nav_planets {
+  font-size: 20px;
+}
+#nav_asteroids {
+  font-size: 20px;
+}
+/*Asteroid Pages*/
+.table {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.asteroid_title {
+  text-align: center;
+  color:white;
+}
+#feed_refresh_button {
+  float: right;
+  margin-right: 347px;
+}
+#user_search_id {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#id_search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+#id_button {
+  margin-bottom: 8px;
+}
+.table_labels {
+  font-size: 20px;
+  font-weight: bold;
+}
+.data {
+  font-size: 18px;
+}
+.asteroid_background {
+  background-image: url('https://www.japantimes.co.jp/wp-content/uploads/2017/06/f-asteroid-a-20170629.jpg');
+  background-size: cover;
+  height:810px;
+}
+/*Show page*/
+.show_background {
+  background-image: url('https://i.ytimg.com/vi/T40NSkd7Olc/maxresdefault.jpg');
+  background-size: cover;
+  height:650px;
+  color: #949292;
+}
+.show_body {
+  width: 842px;
+  margin-left: auto;
+  margin-right: auto;
 }

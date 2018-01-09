@@ -1,12 +1,22 @@
-<div class="center">
+<div class="center show_background">
   <h1><%= @planet.title %></h1>
-  <img src="<%= @planet.image %>" alt=""/>
-  <h4><%= @planet.body %></h4>
-  <h4><%= @planet.moons %></h4>
-  <h4><%= @planet.missions %></h4>
-  <a href="/planets/<%= @planet.id %>/edit">Edit</a>
+  <br>
+  <% if @planet.title == "Mars" || @planet.title == "Saturn" %>
+    <img id="showpage_image" src="<%= @planet.image %>" alt="" height="430";/>
+  <% else %>
+    <img id="showpage_image" src="<%= @planet.image %>" alt=""/>
+  <% end %>
+  <div class="show_body">
+    <br>
+    <h4 id="description"><%= @planet.body %></h4>
+    <br>
+    <h4><%= @planet.missions %></h4>
+    <br>
+    <h4><%= @planet.moons %></h4>
+  </div>
+  <a id="edit_planet" href="/planets/<%= @planet.id %>/edit">Edit</a>
   <form action="<%= @planet.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" name="name" value="Delete">
+    <input id="delete_planet" type="submit" name="name" value="Delete">
   </form>
 </div>

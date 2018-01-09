@@ -1,13 +1,13 @@
-require "sinatra/base"
+require "sinatra"
 class PlanetController < Sinatra::Base
 
   set :root, File.join(File.dirname(__FILE__), "..")
-
   set :views, Proc.new { File.join(root, "views") }
 
   configure :development do
     register Sinatra::Reloader
   end
+
 
   #Homepage
   get "/planets" do
@@ -16,20 +16,20 @@ class PlanetController < Sinatra::Base
     erb :'planets/home'
   end
 
-  #New planets page
+  # New planets page
   get "/planets/new" do
     @planet = Planet.new
     erb :'planets/new'
   end
 
-  #Show planets page
+  # Show planets page
   get "/planets/:id" do
     id = params[:id].to_i
     @planet = Planet.find(id)
     erb :'planets/show'
   end
 
-  #Post new
+  # Post new
   post '/planets/' do
     planet = Planet.new
     planet.title = params[:title]
@@ -40,8 +40,8 @@ class PlanetController < Sinatra::Base
     planet.save
     redirect "/planets"
   end
-
-  #Edit post
+#
+  # Edit post
   put '/planets/:id' do
     id = params[:id].to_i
     planet = Planet.find(id)
@@ -54,15 +54,15 @@ class PlanetController < Sinatra::Base
     planet.save
     redirect '/planets'
   end
-
-  #Delete
+#
+  # Delete
   delete "/planets/:id" do
     id = params[:id]
     Planet.destroy(id)
     redirect "/planets"
   end
-
-  #Show edit page
+#
+  # Show edit page
   get "/planets/:id/edit" do
     id = params[:id].to_i
     @planet = Planet.find(id)
