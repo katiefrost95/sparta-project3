@@ -11,7 +11,7 @@ class NasaController < Sinatra::Base
   end
 
   get '/' do
-    url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
+    url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=q8OlUyCb2xgtrqcm0c31LVFYTLlakUk3i9TlD97K"
     response = HTTParty.get(url)
     @keys = response.parsed_response
     d = DateTime.now()
@@ -31,7 +31,7 @@ class NasaController < Sinatra::Base
 
   get "/lookup" do
     @id = get_id
-    url = "https://api.nasa.gov/neo/rest/v1/neo/#{@id}?api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
+    url = "https://api.nasa.gov/neo/rest/v1/neo/#{@id}?api_key=q8OlUyCb2xgtrqcm0c31LVFYTLlakUk3i9TlD97K"
     response = HTTParty.get(url)
     @keys = response.parsed_response
     @rand = @keys['close_approach_data']
@@ -40,7 +40,7 @@ class NasaController < Sinatra::Base
   end
 
   get "/browse" do
-    url = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=ugQnkeEDMfjgnRfrAdG3qY2tcQwcFz49eiHIcsiC"
+    url = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=q8OlUyCb2xgtrqcm0c31LVFYTLlakUk3i9TlD97K"
     response = HTTParty.get(url)
     @keys = response.parsed_response
     @rand= @keys['near_earth_objects']
