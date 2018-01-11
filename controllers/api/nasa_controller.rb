@@ -6,9 +6,9 @@ class NasaController < Sinatra::Base
   set :root, File.join(File.dirname(__FILE__), "../..")
   set :views, Proc.new { File.join(root, "views") }
 
-  configure :development do
-    register Sinatra::Reloader
-  end
+  # configure :development do
+  #   register Sinatra::Reloader
+  # end
 
   get '/' do
     url = "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=true&api_key=q8OlUyCb2xgtrqcm0c31LVFYTLlakUk3i9TlD97K"

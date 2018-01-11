@@ -1,6 +1,15 @@
 source 'https://rubygems.org'
 
+ruby '2.3.4'
+
 gem 'sinatra'
 gem 'rack'
 gem 'http'
 gem 'rest-open-uri'
+gem 'httparty'
+gem 'json'
+gem 'rspec'
+gem 'capybara'
+gem 'pry'
+gem 'pg'
+gem 'rest-client'
